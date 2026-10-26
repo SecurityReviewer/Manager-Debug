@@ -79,7 +79,7 @@ class Pool:
 def parse_args():
     parser = argparse.ArgumentParser(
         description=(
-            "Concurrent query to Wazuh DB. "
+            "Concurrent query to Cyber Reviewer DB. "
             "Queries are read from stdin, one per line."
         ),
         usage="wdb-query.py [WORKERS] [-h]"

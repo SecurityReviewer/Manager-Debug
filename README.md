@@ -1,6 +1,6 @@
-# Debug Tools for Wazuh
+# Debug Tools for Cyber Reviewer
 
-This folder contains several Python scripts designed to help debug, analyze, and interact with Wazuh internals. Each script targets a specific aspect of Wazuh's operation, such as querying sockets, sending messages, or analyzing performance data.
+This folder contains several Python scripts designed to help debug, analyze, and interact with Cyber Reviewer internals. Each script targets a specific aspect of Cyber Reviewer's operation, such as querying sockets, sending messages, or analyzing performance data.
 
 ## `csv-stat.py`
 
@@ -20,7 +20,7 @@ python3 csv-stat.py <DAEMON> <FILE>
 
 ### Description
 
-Man-in-the-middle tool for the Wazuh queue socket. Intercepts and forwards messages between daemons and the main queue socket for debugging and analysis.
+Man-in-the-middle tool for the Cyber Reviewer queue socket. Intercepts and forwards messages between daemons and the main queue socket for debugging and analysis.
 
 ### Usage
 
@@ -28,13 +28,13 @@ Man-in-the-middle tool for the Wazuh queue socket. Intercepts and forwards messa
 python3 queue-mitm.py
 ```
 - No arguments required.
-- Restart Wazuh daemons after starting the tool.
+- Restart Cyber Reviewer daemons after starting the tool.
 
 ## `sendmsg.py`
 
 ### Description
 
-Sends messages to the main Wazuh queue (analysisd/agentd). Useful for testing message handling and queue operations.
+Sends messages to the main Cyber Reviewer queue (analysisd/agentd). Useful for testing message handling and queue operations.
 
 ### Usage
 
@@ -49,21 +49,21 @@ echo "msg" | python3 sendmsg.py
 
 ### Description
 
-Sends queries to Wazuh module control sockets and prints the response. Useful for interacting with module APIs.
+Sends queries to Cyber Reviewer module control sockets and prints the response. Useful for interacting with module APIs.
 
 ### Usage
 
 ```sh
 echo -n '{"command":"getconfig","parameters":{"section":"internal"}}' | python3 socket-query.py /var/wazuh-manager/queue/sockets/engine-api-http.sock
 ```
-- First argument: Path to the Wazuh module control socket.
+- First argument: Path to the Cyber Reviewer module control socket.
 - Query is read from stdin.
 
 ### `wdb-query.py`
 
 ### Description
 
-Performs concurrent queries to the Wazuh DB (WDB) using multiple workers. Reads queries from stdin and prints formatted responses.
+Performs concurrent queries to the Cyber Reviewer DB (WDB) using multiple workers. Reads queries from stdin and prints formatted responses.
 
 ### Usage
 

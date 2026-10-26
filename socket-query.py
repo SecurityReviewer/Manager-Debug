@@ -7,13 +7,13 @@ from struct import pack, unpack
 from sys import stdin, stdout
 
 DESCRIPTION = """
-Socket Query Tool for Wazuh modules
+Socket Query Tool for Cyber Reviewer modules
 
 Examples:
     echo -n '{"command":"getconfig","parameters":{"section":"internal"}}' | \\
     ./socket-query.py /var/wazuh-manager/queue/sockets/engine-api-http.sock
 
-This tool allows you to send queries to Wazuh module control sockets.
+This tool allows you to send queries to Cyber Reviewer module control sockets.
 """
 
 
@@ -34,7 +34,7 @@ def main():
     )
     parser.add_argument(
         "socket",
-        help="Path to the Wazuh module control socket"
+        help="Path to the Cyber Reviewer module control socket"
     )
     args = parser.parse_args()
 
